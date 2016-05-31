@@ -4,9 +4,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.rutledgepaulv</groupId>
+    <parent>
+        <groupId>com.github.rutledgepaulv</groupId>
+        <artifactId>maven</artifactId>
+        <version>1.1</version>
+    </parent>
+
     <artifactId>rest-query-engine</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.6.3-SNAPSHOT</version>
+
+    <name>rest-query-engine</name>
+    <url>http://github.com/rutledgepaulv/rest-query-engine</url>
+    <description>A library for parsing rsql queries into database queries for a REST API.</description>
+
+    <scm>
+        <url>http://github.com/rutledgepaulv/rest-query-engine</url>
+        <connection>scm:git:git@github.com:rutledgepaulv/rest-query-engine.git</connection>
+    </scm>
+
+    <ciManagement>
+        <system>travis</system>
+        <url>https://travis-ci.org/rutledgepaulv/rest-query-engine</url>
+    </ciManagement>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/rutledgepaulv/rest-query-engine/issues</url>
+    </issueManagement>
 
     <dependencies>
 
@@ -19,7 +43,7 @@
         <dependency>
             <groupId>com.github.rutledgepaulv</groupId>
             <artifactId>q-builders</artifactId>
-            <version>1.0</version>
+            <version>1.3</version>
         </dependency>
 
         <!-- being used for the field type resolution for now. Would like to remove a dependency
@@ -29,14 +53,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
-            <version>1.8.2.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <version>1.8.4.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -81,6 +98,7 @@
             <url>http://gose.fiehnlab.ucdavis.edu:55000/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
 
 
 </project>

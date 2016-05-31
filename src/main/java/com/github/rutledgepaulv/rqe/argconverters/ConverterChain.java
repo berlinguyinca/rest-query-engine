@@ -13,14 +13,14 @@ public class ConverterChain implements Iterable<ArgConverter>, ArgConverter {
 
     public ConverterChain() {}
 
-    public ConverterChain(List<ArgConverter> converters) {
-        this.converters = converters;
+    public ConverterChain(Iterable<ArgConverter> converters) {
         converters.forEach(this::appendInternal);
     }
 
     public ConverterChain(ConverterChain clone) {
         clone.converters.forEach(this::appendInternal);
-        clone.switchBoard.entrySet().stream().forEach(entry -> switchBoard.put(entry.getKey(), entry.getValue()));
+        clone.switchBoard.entrySet().stream().forEach(entry ->
+                switchBoard.put(entry.getKey(), entry.getValue()));
     }
 
     public ConverterChain disable(Class<? extends ArgConverter> clazz) {
