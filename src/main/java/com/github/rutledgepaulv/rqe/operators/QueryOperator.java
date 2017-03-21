@@ -2,6 +2,7 @@ package com.github.rutledgepaulv.rqe.operators;
 
 import cz.jirutka.rsql.parser.ast.ComparisonOperator;
 import cz.jirutka.rsql.parser.ast.RSQLOperators;
+import edu.ucdavis.fiehnlab.rqe.like.LikeStringFieldImpl;
 import edu.ucdavis.fiehnlab.rqe.regex.RegexStringFieldImpl;
 
 import java.util.Arrays;
@@ -18,7 +19,8 @@ public enum QueryOperator {
     NOT_IN(RSQLOperators.NOT_IN, com.github.rutledgepaulv.qbuilders.operators.ComparisonOperator.NIN),
     EXISTS(new ComparisonOperator("=ex="), com.github.rutledgepaulv.qbuilders.operators.ComparisonOperator.EX),
     SUBQUERY_ANY(new ComparisonOperator("=q="), com.github.rutledgepaulv.qbuilders.operators.ComparisonOperator.SUB_CONDITION_ANY),
-    REGEX(new ComparisonOperator("=match="), edu.ucdavis.fiehnlab.rqe.regex.RegexStringFieldImpl.REGEX);
+    REGEX(new ComparisonOperator("=match="), edu.ucdavis.fiehnlab.rqe.regex.RegexStringFieldImpl.REGEX),
+    LIKE(new ComparisonOperator("=like="), edu.ucdavis.fiehnlab.rqe.like.LikeStringFieldImpl.LIKE);
 
     private ComparisonOperator parserOperator;
     private com.github.rutledgepaulv.qbuilders.operators.ComparisonOperator qbuilderOperator;
